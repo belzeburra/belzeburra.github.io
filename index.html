@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <style>
+        /* Estilos Básicos */
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f9; color: #333; }
+        header { background: #24292e; color: white; padding: 2rem text-align: center; }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        
+        /* Grid de Projetos */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { margin-top: 0; }
+        .btn-abrir { background: #2ea44f; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; }
+
+        /* Estilo da Tela de Visualização (Overlay/Modal) */
+        #preview-overlay { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.9); z-index: 1000; 
+        }
+        #preview-content { position: relative; width: 90%; height: 85%; margin: 2% auto; background: white; border-radius: 10px; overflow: hidden; }
+        .close-btn { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; color: #333; z-index: 1001; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Olá, eu sou [Teu Nome] 👋</h1>
+    <p>Desenvolvedor | Meus Projetos no GitHub</p>
+</header>
+
+<div class="container">
+    <h2>Meus Projetos</h2>
+    <div class="projects-grid">
+        
+        <!-- CARD PROJETO 1 -->
+        <div class="card">
+            <h3>Projeto 01</h3>
+            <p>Presente para o Luiz (26/04/2025)</p>
+            <button class="btn-abrir" onclick="abrirProjeto('./projeto-01/')">Visualizar Demo</button>
+        </div>
+
+        <!-- CARD PROJETO 2 -->
+        <div class="card">
+            <h3>Projeto 02</h3>
+            <p>Outro exemplo de projeto incrível que desenvolvi.</p>
+            <button class="btn-abrir" onclick="abrirProjeto('./projeto-02/')">Visualizar Demo</button>
+        </div>
+
+        <!-- Adiciona mais cards conforme precisares -->
+
+    </div>
+</div>
+
+<!-- Tela de Visualização -->
+<div id="preview-overlay">
+    <span class="close-btn" onclick="fecharProjeto()">&times; Fechar</span>
+    <div id="preview-content">
+        <iframe id="iframe-projeto" src=""></iframe>
+    </div>
+</div>
+
+<script>
+    function abrirProjeto(caminho) {
+        const overlay = document.getElementById('preview-overlay');
+        const iframe = document.getElementById('iframe-projeto');
+        
+        // Define o link do projeto e mostra a tela
+        iframe.src = caminho;
+        overlay.style.display = 'block';
+        
+        // Bloqueia o scroll da página principal ao abrir
+        document.body.style.overflow = 'hidden';
+    }
+
+    function fecharProjeto() {
+        const overlay = document.getElementById('preview-overlay');
+        const iframe = document.getElementById('iframe-projeto');
+        
+        // Limpa o iframe e esconde a tela
+        overlay.style.display = 'none';
+        iframe.src = '';
+        
+        // Reativa o scroll
+        document.body.style.overflow = 'auto';
+    }
+</script>
+
+</body>
+</html>
