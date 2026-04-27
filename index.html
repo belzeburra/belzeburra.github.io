@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste</title>
     <style>
-        /* Estilos Básicos */
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f9; color: #333; }
-        header { background: #24292e; color: white; padding: 2rem text-align: center; }
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+      body { font-family: 'Segoe UI', sans-serif; margin: 0; background: url('https://i.pinimg.com/originals/9e/47/fe/9e47fefa5a687335cf906882cecfe779.gif') repeat center center fixed; background-size: cover; color: #333; }
+    
+header { background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; text-align: center; }
+.container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+        .cat-image {
+            display: block;
+            width: 120px;
+            height: 120px;
+            margin: 1.5rem auto;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+        }
         
         /* Grid de Projetos */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card { background: rgba(0, 0, 0, 0.5); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
         .card:hover { transform: translateY(-5px); }
         .card h3 { margin-top: 0; }
-        .btn-abrir { background: #2ea44f; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; }
+        .btn-abrir { background: #ed6d93; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; }
 
         /* Estilo da Tela de Visualização (Overlay/Modal) */
         #preview-overlay { 
@@ -29,11 +38,11 @@
 </head>
 <body>
 
-<header>
-    <h1>Testando lol</h1>
-    <p>projetos</p>
+<header style="text-align: center; background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+    <img src="https://i.pinimg.com/736x/e2/2c/ef/e22cef5fd63b77362b003a09265fda15.jpg" alt="A white and black cat with wide eyes and tongue out sitting on a wooden floor, displaying a playful and silly expression" class="cat-image">
+    <h1>Beelzebub</h1>
 </header>
-
+<p style="text-align: center; font-size: 1.5rem; color: white; ">ESSE SITE ESTÁ EM FASE DE TESTES!!! NAO JULGUE T-T</p>
 <div class="container">
     <h2>Meus Projetos</h2>
     <div class="projects-grid">
