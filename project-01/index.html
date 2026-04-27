@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>"Presente pro Luiz <3"</title>
+    <meta name="description" content="Um presente pro amor da minha vida. É simples, não chega aos pés do que você realmente merece, mas foi feito com carinho :). 
+    Sou muito grata por ter você na minha vida, você me faz cada dia mais feliz. Eu te amo. 
+    De Samila, para Luiz.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+        .container {
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        .description {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            color: #ea80b0;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 10px #ffb3d9;
+            z-index: 1;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        .ui_love_word {
+            color: #ea80b0;
+            font-size: 1.2rem;
+            font-family: Arial, sans-serif;
+            position: absolute;
+            text-shadow: 0 0 10px #ffb3d9;
+            white-space: nowrap;
+            opacity: 0;
+            animation: heart-anim 4s infinite linear;
+        }
+        @keyframes heart-anim {
+            0% {
+                opacity: 0;
+                transform: translate3d(var(--x), var(--y), -100px) scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: translate3d(var(--x), var(--y), 0px) scale(1.1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate3d(var(--x), var(--y), 100px) scale(0.8);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="description">Um presente pro amor da minha vida. É simples, não chega aos pés do que você realmente merece, mas foi feito com carinho :). 
+    Sou muito grata por ter você na minha vida, você me faz cada dia mais feliz. Eu te amo. 
+    De Samila, para Luiz.</div>
+    <div class="container" id="heart-container"></div>
+    <script>
+        const container = document.getElementById('heart-container');
+        const total = 60;
+
+        for (let i = 0; i < total; i++) {
+            const angle = (i / total) * Math.PI * 2;
+            const x = 16 * Math.pow(Math.sin(angle), 3);
+            const y = -(13 * Math.cos(angle) - 5 * Math.cos(2 * angle) - 2 *Math.cos(3 * angle) - 
+            Math.cos(4 * angle));
+
+            const layer = document.createElement('div');
+            layer.className = 'ui_love_word';
+            layer.innerText = 'Eu te amo';
+            const scale = 15;
+            layer.style.setProperty('--x', `${x * scale}px`);
+            layer.style.setProperty('--y', `${y * scale}px`);
+            layer.style.animationDelay = `${(i * 0.1)}s`;
+            container.appendChild(layer);
+        }
+    </script>
+</body>
+</html>
