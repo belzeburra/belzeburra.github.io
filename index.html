@@ -7,7 +7,7 @@
     <style>
       body { font-family: 'Segoe UI', sans-serif; margin: 0; background: url('https://i.pinimg.com/originals/9e/47/fe/9e47fefa5a687335cf906882cecfe779.gif') center center fixed; background-size: cover; background-repeat: no-repeat; color: #333; }
     
-header { background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; text-align: center; }
+header { background: rgba(0, 0, 0, 0.5); color: white; padding: 2rem; text-align: center; }
 .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
         .cat-image {
             display: block;
@@ -33,13 +33,30 @@ header { background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; tex
             background: rgba(0,0,0,0.9); z-index: 1000; 
         }
         #preview-content { position: relative; width: 90%; height: 85%; margin: 2% auto; background: white; border-radius: 10px; overflow: hidden; }
-        .close-btn { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; color: #ffffff; z-index: 1001; }
+        .close-btn { 
+            position: absolute; 
+            top: 10px; 
+            right: 20px; 
+            font-size: 30px; 
+            cursor: pointer; 
+            color: #ffffff; 
+            z-index: 1001; 
+            background: rgba(0,0,0,0.7); 
+            padding: 8px 18px; 
+            border-radius: 8px; 
+            border: 2px solid #fff; 
+            transition: background 0.2s, color 0.2s;
+        }
+        .close-btn:hover {
+            background: #ed6d93;
+            color: #fff;
+        }
         iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
-<header style="text-align: center; background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+<header>
     <img src="https://i.pinimg.com/736x/e2/2c/ef/e22cef5fd63b77362b003a09265fda15.jpg" alt="gatito" class="cat-image">
     <h1>Beelzebub</h1>
 </header>
