@@ -19,30 +19,31 @@ header { background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; tex
             box-shadow: 0 8px 18px rgba(0,0,0,0.25);
         }
         
-        /* Grid de Projetos */
+        
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
         .card { background: rgba(0, 0, 0, 0.5); border-radius: 8px; padding: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; }
         .card:hover { transform: translateY(-5px); }
-        .card h3 { margin-top: 0; }
+        .card h3 { margin-top: 0; color: white; }
+        .card p { color: white; }
         .btn-abrir { background: #ed6d93; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; width: 100%; }
 
-        /* Estilo da Tela de Visualização (Overlay/Modal) */
+        
         #preview-overlay { 
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
             background: rgba(0,0,0,0.9); z-index: 1000; 
         }
         #preview-content { position: relative; width: 90%; height: 85%; margin: 2% auto; background: white; border-radius: 10px; overflow: hidden; }
-        .close-btn { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; color: #333; z-index: 1001; }
+        .close-btn { position: absolute; top: 10px; right: 20px; font-size: 30px; cursor: pointer; color: #ffffff; z-index: 1001; }
         iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
 <header style="text-align: center; background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-    <img src="https://i.pinimg.com/736x/e2/2c/ef/e22cef5fd63b77362b003a09265fda15.jpg" alt="A white and black cat with wide eyes and tongue out sitting on a wooden floor, displaying a playful and silly expression" class="cat-image">
+    <img src="https://i.pinimg.com/736x/e2/2c/ef/e22cef5fd63b77362b003a09265fda15.jpg" alt="gatito" class="cat-image">
     <h1>Beelzebub</h1>
 </header>
-<p style="text-align: center; font-size: 1.5rem; color: black; ">SITE EM FASE DE TESTES!!! NAO JULGUE T-T</p>
+<p style="text-align: center; font-size: 1.5rem; color: black; ">SITE EM FASE DE TESTES T-T</p>
 <div class="container">
     <h2>Meus Projetos</h2>
     <div class="projects-grid">
@@ -64,7 +65,7 @@ header { background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; tex
     </div>
 </div>
 
-<!-- Tela de Visualização -->
+
 <div id="preview-overlay">
     <span class="close-btn" onclick="fecharProjeto()">&times; Fechar</span>
     <div id="preview-content">
@@ -77,11 +78,11 @@ header { background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; tex
         const overlay = document.getElementById('preview-overlay');
         const iframe = document.getElementById('iframe-projeto');
         
-        // Define o link do projeto e mostra a tela
+        
         iframe.src = url;
         overlay.style.display = 'block';
         
-        // Bloqueia o scroll da página principal ao abrir
+       
         document.body.style.overflow = 'hidden';
     }
 
@@ -89,11 +90,11 @@ header { background: rgba(0, 0, 0, 0.5); color: rgb(0, 0, 0); padding: 2rem; tex
         const overlay = document.getElementById('preview-overlay');
         const iframe = document.getElementById('iframe-projeto');
         
-        // Limpa o iframe e esconde a tela
+      
         overlay.style.display = 'none';
         iframe.src = '';
         
-        // Reativa o scroll
+      
         document.body.style.overflow = 'auto';
     }
 </script>
